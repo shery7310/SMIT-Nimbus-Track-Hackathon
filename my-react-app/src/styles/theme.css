@@ -1,0 +1,171 @@
+  /* =========================
+    WORKSPACE APP THEME
+    Jira-inspired palette, scoped as its own variable set
+    so it doesn't collide with the existing index.css tokens.
+    ========================= */
+
+  :root {
+    /* Surfaces */
+    --app-bg: #f4f5f7;
+    --surface: #ffffff;
+    --surface-hover: #f4f5f7;
+    --border-color: #dfe1e6;
+
+    /* Text */
+    --ink-900: #172b4d;
+    --ink-600: #42526e;
+    --ink-400: #6b778c;
+    --ink-inverse: #ffffff;
+
+    /* Accent */
+    --accent-blue: #0052cc;
+    --accent-blue-hover: #0747a6;
+    --accent-blue-bg: #deebff;
+
+    /* Status colors */
+    --status-todo: #dfe1e6;
+    --status-todo-text: #42526e;
+    --status-in-progress: #0052cc;
+    --status-in-progress-bg: #deebff;
+    --status-done: #36b37e;
+    --status-done-bg: #e3fcef;
+    --status-blocked: #de350b;
+    --status-blocked-bg: #ffebe6;
+
+    /* Priority colors */
+    --priority-low: #6b778c;
+    --priority-medium: #ffab00;
+    --priority-high: #ff5630;
+    --priority-urgent: #de350b;
+
+    /* Shape */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow-card: 0 1px 2px rgba(9, 30, 66, 0.13);
+    --shadow-elevated: 0 8px 24px rgba(9, 30, 66, 0.15);
+  }
+
+  /* =========================
+    DARK MODE
+    Applied when <html data-theme="dark">
+    ========================= */
+  [data-theme='dark'] {
+    /* Surfaces */
+    --app-bg: #0d1117;
+    --surface: #161b22;
+    --surface-hover: #21262d;
+    --border-color: #30363d;
+
+    /* Text */
+    --ink-900: #e6edf3;
+    --ink-600: #adbac7;
+    --ink-400: #8b949e;
+    --ink-inverse: #0d1117;
+
+    /* Accent */
+    --accent-blue: #388bfd;
+    --accent-blue-hover: #58a6ff;
+    --accent-blue-bg: #0d2d4f;
+
+    /* Status colors */
+    --status-todo: #30363d;
+    --status-todo-text: #adbac7;
+    --status-in-progress: #388bfd;
+    --status-in-progress-bg: #0d2d4f;
+    --status-done: #3fb950;
+    --status-done-bg: #0f2e1a;
+    --status-blocked: #f85149;
+    --status-blocked-bg: #3a1418;
+
+    /* Priority colors */
+    --priority-low: #8b949e;
+    --priority-medium: #d29922;
+    --priority-high: #ff8a3d;
+    --priority-urgent: #f85149;
+
+    /* Shape */
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.55);
+  }
+
+  [data-theme='dark'] body {
+    background: var(--app-bg);
+  }
+
+  /* =========================
+    THEME TOGGLE
+    Sliding pill switch with sun/moon icons
+    ========================= */
+  .theme-toggle {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle-track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 56px;
+    height: 30px;
+    padding: 0 7px;
+    border-radius: 999px;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #bfdbfe 0%, #fde68a 100%);
+    border: 1px solid rgba(9, 30, 66, 0.08);
+    transition: background 0.35s ease, border-color 0.35s ease;
+  }
+
+  .theme-toggle.is-dark .theme-toggle-track {
+    background: linear-gradient(90deg, #1e293b 0%, #0b1120 100%);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .theme-toggle-icon {
+    position: relative;
+    z-index: 1;
+    width: 14px;
+    height: 14px;
+  }
+
+  .theme-toggle-icon-sun {
+    margin-right: auto;
+    color: #d97706;
+  }
+
+  .theme-toggle-icon-moon {
+    margin-left: auto;
+    color: #94a3b8;
+  }
+
+  .theme-toggle-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(9, 30, 66, 0.35);
+    transform: translateX(0);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.35s ease;
+  }
+
+  .theme-toggle.is-dark .theme-toggle-thumb {
+    transform: translateX(26px);
+    background: #0f172a;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+  }
+
+  .theme-toggle:hover .theme-toggle-track {
+    filter: brightness(1.05);
+  }
+
+  .theme-toggle:focus-visible .theme-toggle-track {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+  }

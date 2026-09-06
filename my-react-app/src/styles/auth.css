@@ -1,0 +1,997 @@
+/* Page background is set by the split-panel .auth-page rule further down,
+   which matches Login.jsx's actual markup (.auth-visual + .auth-card-wrap). */
+
+/* White card */
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Navy title */
+.auth-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e3a5f;
+  margin-bottom: 32px;
+}
+
+/* Toggle tabs */
+.auth-toggle {
+  display: flex;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.auth-toggle button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.auth-toggle button.active {
+  background: #ffffff;
+  color: #1e3a5f;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Error message */
+.auth-error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+/* Form layout */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Row for side-by-side inputs */
+.auth-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Input group */
+.auth-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-group label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 6px;
+}
+
+.auth-required {
+  color: #ef4444;
+}
+
+/* Inputs */
+.auth-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1f2937;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.auth-input::placeholder {
+  color: #d1d5db;
+}
+
+.auth-input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+/* Password wrapper */
+.auth-password-wrap {
+  position: relative;
+}
+
+.auth-password-wrap .auth-input {
+  padding-right: 40px;
+}
+
+.auth-eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-eye:hover {
+  color: #4b5563;
+}
+
+.auth-eye svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Submit button */
+.auth-submit {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  background: #1e3a5f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(30, 58, 95, 0.15);
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+}
+
+.auth-submit:hover {
+  background: #152a45;
+}
+
+.auth-submit:active {
+  transform: scale(0.98);
+}
+
+/* Demo hint box */
+.auth-demo {
+  margin-top: 24px;
+  background: #eff6ff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #1d4ed8;
+}
+
+.auth-demo p:first-child {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.auth-demo code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  display: block;
+  line-height: 1.6;
+}
+
+/* =========================
+   PROFILE PAGE STYLES
+   ========================= */
+
+.profile-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.profile-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.profile-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #1e3a5f;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 4px 0;
+}
+
+.profile-info p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 6px 0;
+}
+
+.profile-role {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.profile-edit-btn {
+  padding: 8px 16px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4b5563;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.profile-edit-btn:hover {
+  background: #f9fafb;
+}
+
+.profile-edit-form {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-edit-form label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.profile-edit-form input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1f2937;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.profile-edit-form input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+.profile-save-btn {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background: #1e3a5f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.profile-save-btn:hover {
+  background: #152a45;
+}
+
+/* Switch user section */
+.profile-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.profile-section h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.user-switch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-switch-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #f3f4f6;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.user-switch-item:hover {
+  background: #f9fafb;
+}
+
+.user-switch-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.user-switch-info {
+  flex: 1;
+}
+
+.user-switch-info p {
+  margin: 0;
+}
+
+.user-switch-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.user-switch-email {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.user-switch-arrow {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Logout */
+.profile-logout {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.profile-logout-btn {
+  width: 100%;
+  padding: 12px;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.profile-logout-btn:hover {
+  background: #fee2e2;
+}
+
+/* App layout */
+.app-wrapper {
+  min-height: 100vh;
+  background: #f0f4f8;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand / Logo */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #1e3a5f;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.navbar-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Nav Menu */
+.navbar-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  transition: all 0.2s;
+}
+
+.navbar-link:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.navbar-link.active {
+  background: #eff6ff;
+  color: #1e3a5f;
+}
+
+/* Auth Section */
+.navbar-auth {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-guest {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.navbar-btn-ghost {
+  background: transparent;
+  color: #4b5563;
+}
+
+.navbar-btn-ghost:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.navbar-btn-primary {
+  background: #1e3a5f;
+  color: #ffffff;
+}
+
+.navbar-btn-primary:hover {
+  background: #152a45;
+}
+
+/* Logged-in User */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1e3a5f;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.navbar-username {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.navbar-logout {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.navbar-logout:hover {
+  background: #fee2e2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 16px;
+  }
+
+  .navbar-nav {
+    display: none; /* You can add a hamburger menu later */
+  }
+
+  .navbar-title {
+    display: none;
+  }
+}
+
+/* =========================
+   AUTH FORM — new interactive states
+   (append to existing auth.css, doesn't touch anything above)
+   ========================= */
+
+/* Red outline on a field once it fails validation */
+.auth-input-error {
+  border-color: #ef4444;
+}
+
+.auth-input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+/* Inline message under an invalid field */
+.auth-field-error {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #dc2626;
+  animation: auth-fade-in 0.15s ease;
+}
+
+/* Disabled state while submitting */
+.auth-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+/* Spinner shown inside the submit button while loading */
+.auth-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: auth-spin 0.7s linear infinite;
+}
+
+/* Shake the card on failed login / failed validation */
+.auth-shake {
+  animation: auth-shake 0.4s ease;
+}
+
+@keyframes auth-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes auth-fade-in {
+  from { opacity: 0; transform: translateY(-2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes auth-shake {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-4px); }
+  40%, 60% { transform: translateX(4px); }
+}
+
+/* =========================
+   REBRAND — Nimbus-Track auth screen
+   Append to the end of auth.css. Does not touch anything above.
+   ========================= */
+
+/* Fix the ugly yellow browser-autofill highlight on inputs */
+.auth-input:-webkit-autofill,
+.auth-input:-webkit-autofill:hover,
+.auth-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #172b4d;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  box-shadow: 0 0 0px 1000px #ffffff inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ---------- Minimal top bar (used only on the auth screen) ---------- */
+.auth-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.auth-footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #9aa4b2;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.auth-footer p {
+  margin: 0;
+}
+
+/* ---------- Brand mark (Cloud icon in a rounded square, like Jira's mark) ---------- */
+.auth-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.auth-brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #1e3a5f;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.auth-brand-mark svg {
+  width: 18px;
+  height: 18px;
+}
+
+.auth-brand-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e3a5f;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Split-panel auth layout ---------- */
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 73px - 61px); /* minus topbar + footer */
+  background: #f0f4f8;
+  padding: 16px;
+}
+
+/* Left: visual/brand panel */
+.auth-visual {
+  flex: 1;
+  display: none; /* shown from tablet width up */
+  background: linear-gradient(160deg, #1e3a5f 0%, #14263e 100%);
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.auth-visual-inner {
+  max-width: 420px;
+  width: 100%;
+}
+
+.auth-visual .auth-brand-mark {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.auth-visual .auth-brand-name {
+  color: #ffffff;
+}
+
+.auth-visual-tagline {
+  margin: 20px 0 36px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 340px;
+}
+
+/* Right: the actual form card */
+.auth-card-wrap {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+@media (min-width: 900px) {
+  .auth-visual {
+    display: flex;
+  }
+}
+
+.auth-visual-headline {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+/* ---------- Carousel (headline/tagline rotator inside the visual panel) ---------- */
+
+/* Reserve height so slide-swaps don't jump the dots around as copy length changes */
+.auth-carousel {
+  margin-top: 20px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.auth-carousel-slide {
+  animation: auth-fade-in 0.5s ease;
+}
+
+.auth-carousel-progress {
+  display: flex;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+/* The visible bar is thin, but the button's padding makes the actual
+   click/tap target ~44px tall — thin indicators are a common a11y miss. */
+.auth-carousel-track {
+  flex: 1;
+  max-width: 64px;
+  padding: 18px 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.auth-carousel-track:hover .auth-carousel-fill {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.auth-carousel-fill {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  transition: background 0.2s;
+}
+
+/* Already-viewed slides sit at full brightness with no motion */
+.auth-carousel-fill.filled {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* The active bar fills left-to-right over the autoplay duration,
+   giving a visible countdown to the next slide. */
+.auth-carousel-fill.active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation-name: auth-carousel-fill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes auth-carousel-fill {
+  to { transform: scaleX(1); }
+}
+
+/* Soft ambient shapes behind the carousel copy, kept subtle and static
+   (no scroll-triggered or looping motion) so the panel reads calm, not busy. */
+.auth-visual::before,
+.auth-visual::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.auth-visual::before {
+  width: 420px;
+  height: 420px;
+  top: -160px;
+  right: -140px;
+}
+
+.auth-visual::after {
+  width: 280px;
+  height: 280px;
+  bottom: -120px;
+  left: -80px;
+  background: rgba(255, 255, 255, 0.04);
+}
+/* =========================
+   DARK MODE — auth / login screen
+   The rest of this file uses fixed hex values, so dark mode
+   is layered on here rather than refactored into variables.
+   ========================= */
+[data-theme='dark'] .auth-topbar {
+  background: #0d1117;
+  border-bottom-color: #30363d;
+}
+
+[data-theme='dark'] .auth-topbar .auth-brand-name {
+  color: #e6edf3;
+}
+
+[data-theme='dark'] .auth-topbar .auth-brand-mark {
+  background: #1f6feb;
+}
+
+[data-theme='dark'] .auth-footer {
+  background: #0d1117;
+  border-top-color: #30363d;
+  color: #6e7681;
+}
+
+[data-theme='dark'] .auth-page {
+  background: #0d1117;
+}
+
+[data-theme='dark'] .auth-card {
+  background: #161b22;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme='dark'] .auth-title {
+  color: #e6edf3;
+}
+
+[data-theme='dark'] .auth-toggle {
+  background: #0d1117;
+}
+
+[data-theme='dark'] .auth-toggle button {
+  color: #8b949e;
+}
+
+[data-theme='dark'] .auth-toggle button.active {
+  background: #21262d;
+  color: #e6edf3;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .auth-group label {
+  color: #adbac7;
+}
+
+[data-theme='dark'] .auth-input {
+  background: #0d1117;
+  border-color: #30363d;
+  color: #e6edf3;
+}
+
+[data-theme='dark'] .auth-input::placeholder {
+  color: #545d68;
+}
+
+[data-theme='dark'] .auth-input:focus {
+  border-color: #388bfd;
+  box-shadow: 0 0 0 3px rgba(56, 139, 253, 0.2);
+}
+
+[data-theme='dark'] .auth-eye {
+  color: #6e7681;
+}
+
+[data-theme='dark'] .auth-eye:hover {
+  color: #adbac7;
+}
+
+[data-theme='dark'] .auth-submit {
+  background: #1f6feb;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .auth-submit:hover {
+  background: #388bfd;
+}
+
+[data-theme='dark'] .auth-demo {
+  background: #0d2d4f;
+  color: #79c0ff;
+}
+
+[data-theme='dark'] .auth-error {
+  background: #3a1418;
+  color: #ff7b72;
+}
